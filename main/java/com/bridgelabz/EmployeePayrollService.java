@@ -10,6 +10,7 @@ public class EmployeePayrollService {
 		CONSOLE_IO, FILE_IO, DB_IO, REST_IO
 	}
 
+
 	public List<EmployeePayrollData> employeePayrollList;
 	private EmployeePayrollDBService employeePayrollDBService;
 
@@ -98,4 +99,8 @@ public class EmployeePayrollService {
 		return checkList.get(0).equals(getEmployeePayrollData(name));
 
 	}
-}
+
+	public List<EmployeePayrollData> getEmployeesInDateRange(String date1, String date2) {
+		List<EmployeePayrollData> employeesInGivenDateRangeList = employeePayrollDBService.getEmployeesInGivenDateRangeDB(date1,date2);
+		return employeesInGivenDateRangeList;
+	}}
