@@ -73,8 +73,8 @@ public class EmployeePayrollService {
 	}
 
 
-	public void updateEmployeeSalary(String name, double salary) throws EmployeePayrollException {
-		int result = employeePayrollDBService.updateEmployeeData(name, salary);
+	public void updateEmployeeSalary(String name, double salary, EmployeePayrollDBService.StatementType type) throws EmployeePayrollException {
+		int result = employeePayrollDBService.updateEmployeeData(name, salary, type);
 		EmployeePayrollData employeePayrollData = null;
 		if (result == 0)
 			throw new EmployeePayrollException(EmployeePayrollException.ExceptionType.UPDATE_FAIL, "Update Failed");
